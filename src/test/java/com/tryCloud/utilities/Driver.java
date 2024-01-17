@@ -41,7 +41,6 @@ public class Driver {
             switch (browserType){
                 case "chrome":
                     //WebDriverManager.chromedriver().setup();
-                  //  Wait<WebDriver>wait=new FluentWait<Webdriver>(driver).withTimout(5,timeUnit.seconds).pollingEvery(100,timeunit. milliseconds).ignoring(NoSuchElementException.class);
                     driverPool.set(new ChromeDriver());
                     driverPool.get().manage().window().maximize();
                     driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
