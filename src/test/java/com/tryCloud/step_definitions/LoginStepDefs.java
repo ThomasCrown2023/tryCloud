@@ -2,7 +2,13 @@ package com.tryCloud.step_definitions;
 
 import com.tryCloud.pages.LoginPage;
 import com.tryCloud.utilities.ConfigurationReader;
+import com.tryCloud.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.interactions.Actions;
+
 public class LoginStepDefs {
 
 
@@ -33,9 +39,5 @@ public class LoginStepDefs {
       LoginPage loginPage=new LoginPage();
       loginPage.login(username,password);
     }
-
-
-
-
 
 }
