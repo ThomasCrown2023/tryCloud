@@ -2,9 +2,12 @@ package com.tryCloud.utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.time.Duration;
+import java.util.HashMap;
 
 public class Driver {
 
@@ -39,10 +42,15 @@ public class Driver {
              */
             switch (browserType){
                 case "chrome":
+                    ChromeOptions options = new ChromeOptions();
+                    options.addArguments("--use-fake-ui-for-media-stream");
+
+
                     //WebDriverManager.chromedriver().setup();
-                    driverPool.set(new ChromeDriver());
+                    driverPool.set(new ChromeDriver(options));
                     driverPool.get().manage().window().maximize();
-                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                    driverPool.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
                     break;
                 case "firefox":
                     //WebDriverManager.firefoxdriver().setup();
